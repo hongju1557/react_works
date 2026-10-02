@@ -186,3 +186,7 @@
 .welcome {
   color: blue;
 }
+.list{
+  list-style: none;
+  padding-left: 0;
+}
