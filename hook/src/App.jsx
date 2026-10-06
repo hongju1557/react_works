@@ -3,6 +3,7 @@ import Counter from './components/Counter'
 import InputValue from './components/inputValue'
 import Drinks from './components/Drinks'
 import DrinkList from './components/DrinkList'
+import IdList from './components/IdList'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         {/* <Counter></Counter> */}
         {/* <InputValue></InputValue> */}
         <Drinks></Drinks>
+        <IdList></IdList>
       </div>
     </>
   )
