@@ -1,0 +1,20 @@
+.container{
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    /* 수직 정렬 */
+    align-items: center;
+    align-items: start;
+    align-items: end;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    justify-content: row;
+    gap: 16px;
+}
+.box{
+    width: 60px;
+    height: 60px;
+    background-color: lightcoral;
+}

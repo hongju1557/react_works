@@ -17,11 +17,7 @@ const Todo = () => {
     
 
     return(
-        <div>
-            <ul>
-                <li></li>
-            </ul>
-        </div>
+        <div></div>
     )
 }
 

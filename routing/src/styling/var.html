@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 변주</title>
+    <style>
+        :root{
+            /* root에서 스타일을 정의하고 var()로 적용 */
+            --green-color: #03bd03;
+            --my-3: 24px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: var(--green-color);
+            margin: var(--my-3);
+            /* 수평 : inline, 속성 적용: inline-block 사용 */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h2>스타일 변수</h2>
+    <div></div>
+    <div></div>
+</body>
+</html>
