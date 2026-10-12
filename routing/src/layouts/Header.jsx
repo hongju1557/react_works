@@ -3,8 +3,11 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
     return (
-        <div>
-            <h2>헤더 영역</h2>
+        <div className='header'>
+          <Link to="/">Home</Link>
+          <Link to="/Signup">회원가입</Link>
+          <Link to="/SignIn">로그인</Link>
+          <Link to="/Board">게시판</Link>
         </div>
     )
 }

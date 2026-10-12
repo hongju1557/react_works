@@ -7,6 +7,9 @@ import {BrowserRouter, Link, Routes, Route} from "react-router-dom"
 import Main from './pages/Main'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
+import Header from './layouts/Header'
+import Board from './pages/Board'
+import BoardDetail from './pages/BoardDetail'
 
 function App() {
 
@@ -14,17 +17,16 @@ function App() {
     <>
     <section className='app'>
       <BrowserRouter>
-        <div className='header'>
-          <Link to="/">Home</Link>
-          <Link to="/Signup">회원가입</Link>
-          <Link to="/SignIn">로그인</Link>
-        </div>
+
+      <Header></Header>
 
         <div className='content'>
           <Routes>
             <Route path="/" element={<Main />}/>
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/signin" element={<SignIn/>} />
+            <Route path="/Board" element={<Board/>} />
+            <Route path="/board/:id" element={<BoardDetail/>}/>
           </Routes>
 
         </div>
