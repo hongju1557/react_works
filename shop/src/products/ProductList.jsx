@@ -37,6 +37,12 @@ const ProductLists = ({products}) => {
 
 
             </table>
+
+            <div className="btn-add">
+                <Link to="/Addproduct">
+                <button>상품 등록</button>
+                </Link>
+            </div>
         </div>
     )
 }

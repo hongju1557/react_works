@@ -39,6 +39,15 @@ const AddProduct = () => {
         navigate("/products");
         
     }
+    const handleCancel = () => {
+        //입력 필드 초기화
+        setFormData({
+            name:'',
+            price:'',
+            description:'',
+
+        })
+    }
     
     return(
         <div className="add-product">
@@ -78,6 +87,7 @@ const AddProduct = () => {
                 </div>
                 <div>
                     <button type="submit">등록</button>
+                    <button type="button" onClick={handleCancel}>지우기</button>
                 </div>
             </form>
         </div>
