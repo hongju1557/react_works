@@ -1,7 +1,8 @@
 import './App.css'
-import FetchAll from './components/FetchAll'
 import {BrowserRouter, Routes, Route} from  "react-router-dom";
-import FetchOneById from './components/FetchOneById';
+import AxiosTodos from './axios_ex/AxiosTodos';
+import AxiosTodoById from './axios_ex/AxiosTodoById';
+import AxiosNewTodo from './axios_ex/AxiosNewTodo';
 
 function App() {
 
@@ -10,8 +11,14 @@ function App() {
       <section className="app">
         <BrowserRouter>
         <Routes>
-          <Route path='/' element={<FetchAll />}></Route>
-          <Route path='/:id' element={<FetchOneById/>}></Route>
+          {/* fetch */}
+          {/* <Route path='/' element={<FetchAll />}></Route>
+          <Route path='/:id' element={<FetchOneById/>}></Route> */}
+
+          {/* axios */}
+          <Route path='/' element={<AxiosTodos/>}></Route>
+          <Route path='/axios/:id' element={<AxiosTodoById/>}></Route>
+          <Route path='/axios-post' element={<AxiosNewTodo/>}></Route>
         </Routes>
         </BrowserRouter>
         
