@@ -1,0 +1,15 @@
+$kind: http-request
+url: http://localhost:8000/api/products
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"id\":4,\r
+
+    \    \"name\":\"유선모니터\",\r
+
+    \    \"price\":130000\r
+
+    }"
+order: 2000
