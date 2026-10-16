@@ -7,6 +7,8 @@ const PORT = 8000;
 app.use(express.json()); // JSON 요청 처리
 app.use(express.urlencoded({ extended: true })); // 폼 요청 처리
 
+
+
 app.get('/',(req,res) =>{
     res.send("<h1>API 서버와 DB 연동</h1>")
 })
@@ -51,6 +53,52 @@ app.get("/api/products",(req,res) =>{
         }
         res.json(results);
     })
+})
+
+app.get("/api/products/:id", (req, res) => {
+    const productId = req.params.id;
+    const sql = "SELECT * FROM product WHERE id = ?"
+    db.query(sql, [productId], (err, results) => {
+        if(err){
+            console.log("상품 조회 에러: ", err);
+            res.send("상품 조회 중 오류가 발생했습니다.");
+            return;
+        }
+        res.json(results[0]);  //1건(맨 앞)
+    });
+})
+
+//상품 수정
+//app.put(경로,콜백함수)
+
+app.put("/api/products/:id",(req,res)=>{
+    //수정하려면 이미 존재하는 상품(id)를 가져오기
+        const productId = req.params.id;
+        const {productName, price} = req.body;
+        const sql = "UPDATE product SET product_name=?, price=? WHERE id=?"
+        db.query(sql, [productName, price, productId], (err,results) =>{
+
+            if(err){
+            console.log("상품 조회 에러: ", err);
+            res.send("상품 조회 중 오류가 발생했습니다.");
+            return;
+        }
+            res.send("상품이 성공적으로 수정되었습니다.");
+        })
+})
+
+
+app.delete("/api/products/:id", (req, res) => {
+    const productId = req.params.id;
+    const sql = "DELETE FROM product WHERE id = ?";
+    db.query(sql, [productId], (err, results) => {
+        if(err){
+            console.log("상품 조회 에러: ", err);
+            res.send("상품 조회 중 오류가 발생했습니다.");
+            return;
+        }
+        res.send("상품이 성공적으로 삭제되었습니다.");
+    });
 })
 
 app.listen(PORT,()=> {
