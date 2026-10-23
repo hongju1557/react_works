@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8000/api/users/user1
+method: GET
+order: 3000
