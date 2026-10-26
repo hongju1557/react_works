@@ -6,6 +6,10 @@ import './App.css'
 import UseRefEx from './components/UseRefEx'
 import InputFocus from './components/InputFocus'
 import Counter from './components/Counter'
+import CountReducer from './components/CountReducer'
+import BankReducer from './components/BankReducer'
+import UserParent from './use_context/UserParent'
+import CounterReducer from './apps/CounterReducer'
 
 function App() {
 
@@ -14,7 +18,11 @@ function App() {
       <section className="app">
         {/* <UseRefEx /> */}
         {/* <InputFocus /> */}
-        <Counter />
+        {/* <Counter /> */}
+        {/* <CountReducer/> */}
+        {/* {<BankReducer/>} */}
+        {/*{<UserParent/>}*/}
+        <CounterReducer/>
       </section>
     </>
   )
